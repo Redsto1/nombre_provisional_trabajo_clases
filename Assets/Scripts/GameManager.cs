@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 
     public void Animate_labyrinth(string animation)
     {
-
         animator.SetTrigger(animation);
     }
 }

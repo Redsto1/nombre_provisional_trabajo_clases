@@ -24,7 +24,7 @@ public class movement_wall : MonoBehaviour
             {
                 return;
             }
-            movement.respawn();
+            movement.Death();
         }
     }
 }

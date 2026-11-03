@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public Animator animator;
 
-    bool Rotated = false;
+    public Transform respawn_position;
 
     public void Animate_labyrinth(string animation)
     {

@@ -1,31 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.InputSystem;
-public class CharacterMovement : MonoBehaviour
-{
-    [SerializeField]
-    private Rigidbody rb;
-
-    public float speed = 50;
+public class CharacterMovement : MonoBehaviour {
 
     [SerializeField]
-    private PlayerInput input;
+    private GameManager gameManager;
+
+    [SerializeField]
+    private Rigidbody rigidBody;
+
+    [SerializeField]
+    private Animator playerAnimator;
+
+    public float playerSpeed = 50;
+
     [SerializeField]
     Vector2 control_axis = new Vector2();
 
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    bool allow_movement = true;
+
+    private void Start()
     {
-        rb.maxLinearVelocity = 5;
+        rigidBody.maxLinearVelocity = 5;
     }
-    
-    
-    // Update is called once per frame
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
-        rb.AddForce(new Vector3((control_axis.x * speed) * Time.deltaTime,0,(control_axis.y * speed) * Time.deltaTime));
-        Debug.Log(new Vector3((control_axis.x * speed) * Time.deltaTime, 0, (control_axis.y * speed) * Time.deltaTime));
+        if (allow_movement)
+        {
+            rigidBody.AddForce(new Vector3((control_axis.x * playerSpeed), 0, (control_axis.y * playerSpeed)));
+        }
     }
 
     public void Movement(InputAction.CallbackContext context)
@@ -33,8 +40,18 @@ public class CharacterMovement : MonoBehaviour
         control_axis = context.ReadValue<Vector2>();
     }
 
-    public void respawn()
+    public void Death()
     {
-
+        allow_movement = false;
+        playerAnimator.SetTrigger("death");
     }
+
+    public void Respawn()
+    {
+        playerAnimator.SetTrigger("respawn");
+        allow_movement = true;
+        transform.position = gameManager.respawn_position.position;
+    }
+    
+    
 }

@@ -22,7 +22,7 @@ public class WallCollisionDetector : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player")) 
         {
-            redening = 5;
+            redening = 2.5f;
         }
     }
 }

@@ -15,16 +15,5 @@ public class movement_wall : MonoBehaviour
         transform.Rotate(new Vector3(0,1,0), rotation_speed);
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            var movement = other.gameObject.GetComponent<CharacterMovement>();
-            if (movement == null)
-            {
-                return;
-            }
-            movement.Death();
-        }
-    }
+    
 }

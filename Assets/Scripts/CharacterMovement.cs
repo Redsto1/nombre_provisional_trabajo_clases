@@ -19,8 +19,7 @@ public class CharacterMovement : MonoBehaviour {
     [SerializeField]
     Vector2 control_axis = new Vector2();
 
-    [SerializeField]
-    bool allow_movement = true;
+    public bool allow_movement = true;
 
     private void Start()
     {

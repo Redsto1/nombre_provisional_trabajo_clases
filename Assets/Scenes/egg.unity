@@ -201,7 +201,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 81767034}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1161671134}
+        m_TargetAssemblyTypeName: man, Assembly-CSharp
+        m_MethodName: accept
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &81767034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1137,7 +1149,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1057735435}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1057735435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1212,7 +1236,7 @@ MonoBehaviour:
   - {fileID: 121421106}
   - {fileID: 2127113358}
   - {fileID: 407727713}
-  - {fileID: 2034232803}
+  last_text: {fileID: 2034232803}
   Dialogue_box: {fileID: 1923571292}
   current_text: 0
 --- !u!136 &1161671135

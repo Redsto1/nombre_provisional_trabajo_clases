@@ -8,10 +8,9 @@ public class CharacterMovement : MonoBehaviour {
     [SerializeField]
     private GameManager gameManager;
 
-    [SerializeField]
+    
     private Rigidbody rigidBody;
 
-    [SerializeField]
     private Animator playerAnimator;
 
     public float playerSpeed = 50;
@@ -23,6 +22,14 @@ public class CharacterMovement : MonoBehaviour {
 
     private void Start()
     {
+        rigidBody = gameObject.GetComponent<Rigidbody>();
+        playerAnimator = gameObject.GetComponent<Animator>();
+
+        if (GameObject.FindGameObjectsWithTag("GameController") != null)
+        {
+            gameManager = GameObject.FindGameObjectsWithTag("GameController")[0].GetComponent<GameManager>();
+        }
+
         rigidBody.maxLinearVelocity = 5;
     }
 

@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using System.IO;
-using SimpleJSON;
 using UnityEngine.TextCore.Text;
 public class man : MonoBehaviour
 {
